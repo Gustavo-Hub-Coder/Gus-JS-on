@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uasap 2</title>
+    <style>
+        :root{
+            --modo-oscuro: #1a1a1e;
+            --elementos-oscuro: #ffffff;
+            --modo-claro: #f9f9f9;
+            --elementos-claro: #333333;
+        }
+        body{
+            background-color: var(--modo-claro);
+            color: var(--elementos-claro);
+        }
+        .contenedorIB{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button:hover {
+            background-color: #e0e0e0; /* Color de fondo al pasar el mouse */
+        }
+        div#div1{
+            display: block;
+        }
+        div#div2{
+            display: none;
+        }
+        button#Salir{
+            display: none;
+            cursor: pointer;
+            border: 2px solid black;
+        }
+        button#Listo{
+            margin-top: 5px;
+            display: block;
+            border: 2px solid black;
+            cursor: pointer;
+            text-align: center;
+            width: 100px;
+        }
+        .contenedorImg{
+            text-align: center;
+        }
+        h2, h1{
+            font-size: 45px;
+            text-align: center;
+        }
+        input{
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            width: 300px;
+            border-radius: 4px;
+            border: 2px solid black;
+        }
+        img{
+            border-radius: 100%;
+        }
+
+        button#mdo, button#mdc{
+            margin-top: 7px;
+            margin-left: 7px;
+            width: 110px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <h1>Uasap 2</h1>
+        <hr>
+        <button onclick="modoOscuro()" id="mdo">Modo Oscuro</button>
+        <button onclick="modoClaro()" id="mdc" style="display: none;">Modo Claro</button>
+        <h2>Entre con el nombre de su cuenta</h2>
+        <div class="contenedorImg">
+            <img src="imagenes/perfil de proyecto uasap 2.png" alt="">
+        </div>
+        <div class="contenedorIB">
+            <input type="text" id="entrarInput" placeholder="Nombre de la cuenta">
+            <button onclick="Listo()" id="Listo">Listo</button>
+        </div>
+    </div>
+    <div id="div2">
+        <h1>Uasap 2</h1>
+        <hr>
+        <button onclick="Salir()" id="Salir">Salir</button>
+        <h3 id="nombreCuenta">nombre</h3>
+    </div>
+
+    <script src="uasap2_script.js"></script>
+</body>
+</html>

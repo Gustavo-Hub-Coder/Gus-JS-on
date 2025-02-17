@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fundamentos JavaScript</h1>
+    <h2>Objetos</h2>
+    <h2>Mira la consola</h2>
+    <script>
+        const datos = {
+            nombre: 'Gustavo',
+            apellido: 'Alonzo',
+            edad: '14',
+            soltero: true,
+            passatiempos: ['Andar de bici', 'Desarollar con JS', 'Jugar'],
+            contacto: {
+                email: 'garciapino.gus@gmail.com',
+                instagram: 'A.l.o.n.z.o',
+                contraseña: 'Alonzo.2010',
+            },
+            saludar: function () {
+                console.log(`Hola :)`)
+            },
+
+            decirMiNombre: function (){
+                console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años.`)
+            } 
+        }
+        console.log(datos);
+        console.log(datos['nombre']);
+        console.log(datos['apellido']);
+        console.log(datos.nombre);
+        console.log(datos.apellido);
+        console.log(datos.edad);
+        console.log(datos.soltero); 
+        console.log(datos.passatiempos);
+        console.log(datos.passatiempos[0]);
+        console.log(datos.passatiempos[1]);
+        console.log(datos.passatiempos[2]);
+        console.log(datos.contacto);
+        console.log(datos.contacto.instagram);
+        console.log(datos.contacto.contraseña);
+        console.log(datos.contacto.email);
+        datos.saludar();
+        datos.decirMiNombre();
+    </script>
+</body>
+</html>

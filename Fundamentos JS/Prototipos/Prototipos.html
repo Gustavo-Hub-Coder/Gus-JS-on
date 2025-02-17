@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fundamentos JS</h1>
+    <h2>Prototipos</h2>
+    <h2>Mira la consola</h2>
+    <script>
+        //POO (Orientada a objetos)
+
+        /*Clases - Modelos a seguir
+        Objetos - Es una instancia de una clase
+        Atributos - Es una característica o propiedad del objeto (son variables dentro de un objeto)
+        Métodos - Son las acciones que un objeto puede realizar
+        */
+       /*
+       const animal = {
+        nombre: "Snoopy",
+        sonar: () => console.log("Uao Uao")
+        }
+
+       const Animal = {
+        nombre: "Bunny",
+        sonar: () => console.log("Uao Uao")
+        }
+        console.log(Animal);
+        console.log(animal);
+        */
+
+       //Función constructura 
+        class Animal{
+            //el constructor es un metodo especial que se ejecuta en el momento de instanciar la clase
+            constructor(nombre, genero){
+                //Metodos
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+            //metodos
+            sonar = function() {
+                console.log("hago sonidos porque estoy vivo");
+            }
+        }
+        class Perro extends Animal {
+            constructor (nombre, genero, edad){
+                super(nombre,genero);
+                this.edad = edad;
+            }
+            ladrar() {
+                console.log("*ladrido*")
+            }
+        }
+        const Snoopy = new Animal("Snoopy", "Macho");
+        const Bunny = new Perro("Bunny", "Hembra", 17);
+        const mimi = new Animal("Mimi", "Macho");
+
+        console.log(Snoopy);
+        console.log(Bunny);
+        console.log(mimi)
+        mimi.sonar();
+        Bunny.ladrar()
+        Snoopy.sonar();
+    </script>
+</body>
+</html>

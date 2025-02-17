@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Expresiones Regulares
+    let cadena =  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus consectetur reiciendis id eos sequi error, perspiciatis beatae quisquam, quos sed et voluptate a nobis corrupti consequatur? Obcaecati temporibus explicabo dolores."
+    let expReg = new RegExp("lorem", "i");
+
+    console.log(expReg.test(cadena));
+    console.log(expReg.exec(cadena));
+
+    let expReg2 = /lorem{1}/i;
+
+    console.log(expReg2.test(cadena));
+    console.log(expReg2.exec(cadena));
+    </script>
+</body>
+</html>

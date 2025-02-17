@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fundamentos JavaScript</h1>
+    <h2>Tipos de operadores</h2>
+    <h2>Mira la consola</h2>
+    <script>
+        /*Operadores*/
+
+    /*Aritmeticos + - * / % () */
+
+    let a = 5 + (5 - 10) * 3;
+    let modulo = 5 / 2; // DIvision inperfecta (sin re siduo)
+    let modulo2 = 5 % 2; // Division perfecta (con residuos)
+
+    console.log(a);
+    console.log(modulo);
+    console.log(modulo2);
+    console.log('**********************************');
+
+    /* Operadores Relacionales 
+    > < >= <= == === != !==*/
+
+    console.log(8 > 9);
+    console.log(9 > 8);
+    console.log(8 >= 9);
+    console.log(9 >= 8);
+    console.log(7 < 7);
+    console.log(7 <= 7);
+    
+    console.log('**********************************');
+    /*    
+    = 1 igual es asignación de variable
+    == 2 iguales es comparación de valores 
+    === 3 iguales es comparación de tipo de dato y valor
+    */
+
+    console.log('7' == 7); //comparacion de valor
+    console.log('7' === 7); //comparacion de tipo de dato y valor
+    console.log(7 === 7); //comparacion de tipo de dato y valor
+
+    /*Incremento y Decremento*/
+    console.log('**********************************');  
+
+    let i = 2;
+    //i = i + 2;
+    //i *= 3;
+
+    // operador unario
+    i++;
+    i--;
+    ++i;
+    --i;
+    console.log(i);
+
+    console.log('**********************************');
+
+    /*Lógicos 
+    ! = Not : Niega, es decir lo que es verdadero lo vuelve falso y viceversa
+    || = Or : Cuando tengo 2 o mas condiciones, con que una se cumpla es decir sea verdadera, el OR sera true
+    && = And: Cuando tengo 2 o mas condiciones, todas tienen que ser verdaderas para que AND sea true*/
+    console.log(!true);
+    console.log(!false);
+    console.log((9 === 9) || ('9' === 9) );
+    console.log((9 === 9) && ('9' === 9));
+    </script>
+</body>
+</html>

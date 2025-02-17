@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Adivina el numero</h1>
+    <input type="number" id="entradaDelNumero">
+    <button onclick="Listo()">Listo</button>
+    <script>
+        // declaracion dela variable
+        var entradaDelNumero = document.querySelector("input");
+
+        // Verifica si el valor dela entrada es mayor o menor o igual al numero generado
+        function Listo() {
+            console.log(entradaDelNumero.value)
+            if (entradaDelNumero.value > generador()){
+                alert(`El número ${entradaDelNumero.value} es mayor que el numero que tienes que adivinar`);
+                document.body.style.backgroundColor = "red";
+            }else if (entradaDelNumero == generador()) {
+                alert(`El número ${entradaDelNumero.value} es igual al numero adivinado que es ${generador()}`);
+                document.body.style.backgroundColor = "green"
+            } else if (entradaDelNumero.value < 1) {
+                alert("[ERROR] Verifica el valor de la entrada del número")
+            }else {
+                alert(`El número ${entradaDelNumero.value} es menor que el numero que tienes que adivinar!`);
+                document.body.style.backgroundColor = "red"
+            }
+        }
+
+        // Genera un numero y lo pone en la consola
+        const generador = function () {
+            return Math.floor(Math.random() * 101);
+        }
+        console.log(generador())  
+        
+        
+    </script>
+</body>
+</html>

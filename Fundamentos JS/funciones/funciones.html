@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fundamentos JavaScript</h1>
+    <h2>Funciones</h2>
+    <h2>Mira la consola</h2>
+
+    <script>
+        
+        //Declaración de función
+        function estoEsUnaFuncion(){
+            console.log('Uno');
+            console.log('Dos');
+            console.log('Tres');
+        }
+        //Invocación de función
+            estoEsUnaFuncion();
+            estoEsUnaFuncion();
+
+        console.log('******************************************************************')
+
+        //Funcion que devuelve valor
+        function unaFuncionQueDevuelveValor(){
+            console.log('Uno');
+            //todo lo que esta antes del return lo ejecuta y lo que esta abajo lo ignora
+            return 19;
+            console.log('Dos');
+            console.log('Tres');
+            //por eso usamos return en el final
+            return 'la función ha retornado una cadena de texto'
+        }
+        //Variable asignada con la funcion
+        let valorDeFuncion = unaFuncionQueDevuelveValor();  
+        //el return no aparece porque no esta dentro de un console.log() por eso imprimo un console.log con el valor de la funcion.
+        console.log(valorDeFuncion)
+
+        console.log('******************************************************************')
+
+        function saludar(/*Esto son parametros*/nombre = 'desconocido', edad = '0', altura = '0'){
+            console.log(`Hola mi nombre es ${nombre}, tengo ${edad} años y mi altura es ${altura}`);
+        }
+        saludar("Gustavo", 14, 1.64)
+        saludar()
+
+        console.log('******************************************************************')
+
+        //funciones declaradas VS funciones expresadas
+        funcionDeclarada(); //Invocación de la funcion antes de la funcion declarada
+        //funcion declarada
+        function funcionDeclarada(){
+            console.log('Esto es una función declarada, puede invocarse en cualquier parte de nuestro código incluso antes de que la función sea declarada')
+        }
+        funcionDeclarada();
+        
+        console.log('*****************************************************************')
+
+        //funcionExpresada()
+
+        //funcion expresada
+        //esto es una función anónima
+        const funcionExpresada = function (){
+            console.log("Esto es una función expresada, es decir, una función que se le ha asignado como valor a una variable, si invocamos esta función antes de su definición JavaScript nos dirá 'Uncaught ReferenceError: Cannot access 'funcionExpresada' before initialization'")
+        }
+        funcionExpresada()
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fundamentos JavaScript</h1>
+    <h2>Manejo de Errores</h2>
+    <h2>Mira la consola</h2>
+    <script>
+        try {
+            console.log('En el Try se agrega el código a evaluar');
+            noExiste;
+            console.log('Segundo mensaje en el try');
+        } catch (error) {
+            console.log('Catch, captura cualquier error surgido o lanzado en el try');
+            console.log(error);
+        }finally{
+            console.log('El bloque finally se ejecutará siempre al final de um bloque try-catch');
+        }
+        console.log('*******************************************');
+        try {
+            let numero = 'y';
+            if (isNaN(numero)) {
+                throw new Error('El caracter introducido no es un número')
+            }
+            console.log(numero * numero);
+        } catch (error) {
+            console.log(`Se produjo el siguiente ${error}`);
+        }
+        console.log('*******************************************');
+        try {
+            let num = 'y';
+            if (num > 5) {
+                console.log('el número es mayor que 5');
+            }else if (num == 5){
+                console.log('el número es 5');
+            }else if (isNaN(num)){
+                throw new Error('El caracter introducido no es un número')
+            }else if (num > 10){
+                throw new Error('El caracter introducido es mayor que 10')
+            }else{
+                console.log('el número es menor que 5');
+            }
+        } catch (error) {
+            console.log(`Se produjo el siguiente ${error}`);
+            console.log(`Se ha producido el siguiente ${error}`);
+        }
+    </script>
+</body>
+</html>

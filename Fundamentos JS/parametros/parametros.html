@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function Sumar(a, b, ...c){
+            let resultado = a + b;
+
+            c.forEach(function (n) {
+                resultado += n;
+            });
+            
+            return resultado;
+        }
+
+
+        console.log(Sumar(1,2));
+        console.log(Sumar(1,2,3));
+        console.log(Sumar(1,2,3,5));
+        console.log(Sumar(1,2,3,5,6));
+        console.log(Sumar(1,2,3,5,6,7));
+        
+        const arr1 = [1,2,3,4,5],
+        arr2 = [7,8,9,0];
+
+        console.log(arr1, arr2);
+        arr3 = [...arr1, ...arr2];
+        console.log(arr3);
+    </script>
+</body>
+</html>

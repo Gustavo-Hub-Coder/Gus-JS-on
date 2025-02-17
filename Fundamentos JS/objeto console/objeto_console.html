@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(console);
+        console.error("esto es un error");
+        console.warn("Esto es un aviso");
+        console.info("Esto es un mensaje informativo");
+        console.log("Un registro de lo que ha pasado en nuestra aplicación");
+
+        let nombre = "Gustavo",
+        edad = 14;
+
+        console.log(nombre);
+        console.log(edad);
+        console.log(nombre, edad);
+        console.log(`Hola mi nombre es %s y tengo %d años`, nombre, edad);
+        //console.clear();
+
+        console.log(window);
+        console.log(document);
+        console.dir(window);
+        console.clear();
+
+        console.group("Cursos de Mi Professor en Youtube");
+        console.log("Cursos de JavaScript");
+        console.log("etc...");
+        console.log("etc...");
+        console.log("etc...");
+        console.groupEnd();
+
+        console.log("ha terminado el grupo");
+
+        console.groupCollapsed("Cursos de Mi Professor en Youtube");
+        console.log("Cursos de JavaScript");
+        console.log("etc...");
+        console.log("etc...");
+        console.log("etc...");
+        console.groupEnd();
+        
+        console.clear();
+
+        console.log(console);
+        console.table(Object.entries(console).sort());
+        
+        console.clear()
+        const numeros = [1,2,3],
+            vocales = ["a","b","c",];
+        console.table(numeros);
+        console.table(vocales);
+
+        const Perro = {
+            nombre: "Nala",
+            Raza: "Husky",
+            Edad: 2
+        }
+        console.table(Perro);
+        console.clear();
+
+        console.time("Cuanto tiempo tarda mi código");
+
+        const arreglo = Array(10);
+        for (let i = 0; i < arreglo.length; i++) {
+            arreglo[i] = i;
+        }
+
+        console.timeEnd("Cuanto tiempo tarda mi código");
+
+        console.clear();
+
+        for(let c = 0; c <= 100; c++){
+            console.log(`${c}. To com sono`);
+        }
+    </script>
+</body>
+</html>

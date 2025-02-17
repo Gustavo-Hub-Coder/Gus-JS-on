@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /*Código Sincrono Bloqueante*/
+         (() => {
+            console.log("código Sincrono");
+            console.log("inicio");
+
+            function dos() {
+                console.log("Dos");
+            }
+
+            function uno() {
+                console.log("uno");
+                dos();
+                console.log("Tres");
+            }
+
+            uno();
+            console.log("Fin")
+         })();
+         /*Código Asincrono no Bloqueante*/
+         (() => {
+            console.log("Codigo asincrono");
+            console.log("inicio");
+            
+            function dos() {
+                setTimeout(function () {
+                    console.log("Dos");
+                }, 1000)
+            }
+
+            function uno() {
+                setTimeout(function () {
+                    console.log("Uno");
+                }, 0);
+                dos()
+                console.log("Tres");
+            }
+
+            uno()
+            console.log("Fin");
+         })()
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fundamentos JavaScript</h1>
+    <h2>Arreglos o Arrays</h2>
+    <h2>Mira la consola</h2>
+    
+    <script>
+        const a = [];
+        const b = [1, true, 'Hola', ['A', 'B', 'C', [1, 2, 3]]];
+        console.log(a);
+        console.log(a.length);
+        console.log(b);
+        console.log(`la longitud de b es ${b.length}, sabemos eso usando la palavra reservada '.length'`);
+        console.log(b)
+        console.log(b[3])
+        console.log(b[3][3])
+        console.log(b[3][3][2])
+
+        const c = Array.of('X', 'Y', 'Z', 9, 8, 7);
+        console.log(c);
+
+        const d = Array(100).fill(false);
+        console.log(d);
+
+        const e = Array();
+        console.log(e);
+
+        const f = new Array(1, 2 , 3, true, false)
+        console.log(f);
+
+        const colores = ['Rojo', 'Verde', 'Azul'];
+        console.log(colores);
+        //push agrega un elemento al final de array
+        colores.push('Negro')
+        console.log(colores);
+        //pop quita el ultimo elemento del array
+        colores.pop();
+        console.log(colores);
+
+        colores.forEach(function (el, index){
+            console.log(`<li id="${index}">${el}</li>`)
+        })
+
+    </script>
+</body>
+</html>
