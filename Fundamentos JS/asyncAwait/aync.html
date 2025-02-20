@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function cuadradoPromise(value) {
+            if (typeof value !== "number"){ 
+             return Promise.reject(`Error, el valor "${value}" ingresado no es un número`);
+            }
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve({
+                        value,
+                        result: value * value
+                    });
+                }, 0 | Math.random() * 1000);
+            });
+        }
+
+        async function FuncionAsyncronaDeclarada() {
+            // Manejo de errores
+            try {
+                console.log("inicio Async Function");
+
+                let obj =  await cuadradoPromise(0);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+
+                /* la palabra reservada "await" tiene la funcion de esperar
+                el resultado de una ejecución antes de pasar a la siguiente ejecucion*/
+
+                /*De esta forma se entiende mejor el codigo sin los "then" de los promises y 
+                las llaves para no tener un error de sintaxis*/
+                obj = await cuadradoPromise(1);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+
+                obj = await cuadradoPromise(2);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+
+                obj = await cuadradoPromise("3");
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+
+                obj = await cuadradoPromise(4);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+
+                console.log("fin de Async Function");
+            } catch (err) {
+                //Manipulacíon de errores
+                console.log(err)
+            }
+        }
+
+        FuncionAsyncronaDeclarada();
+
+        const FuncionAsyncronaExpresada = async () => {
+            try {
+                console.log("inicio Async Function");
+
+                let obj =  await cuadradoPromise(0);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+
+                /* la palabra reservada "await" tiene la funcion de esperar
+                el resultado de una ejecución antes de pasar a la siguiente ejecucion*/
+
+                /*De esta forma se entiende mejor el codigo sin los "then" de los promises y 
+                las llaves para no tener un error de sintaxis*/
+                obj = await cuadradoPromise(1);
+                console.log(`Async Function expresada: ${obj.value}, ${obj.result}`);
+
+                obj = await cuadradoPromise(2);
+                console.log(`Async Function expresada: ${obj.value}, ${obj.result}`);
+
+                obj = await cuadradoPromise(3);
+                console.log(`Async Function expresada: ${obj.value}, ${obj.result}`);
+
+                obj = await cuadradoPromise(4);
+                console.log(`Async Function expresada: ${obj.value}, ${obj.result}`);
+
+                obj = await cuadradoPromise(5);
+                console.log(`Async Function expresada: ${obj.value}, ${obj.result}`);
+
+                obj = await cuadradoPromise(6);
+                console.log(`Async Function expresada: ${obj.value}, ${obj.result}`);
+
+                obj = await cuadradoPromise("7");
+                console.log(`Async Function expresada: ${obj.value}, ${obj.result}`);
+
+                console.log("fin de Async Function");
+            } catch (err) {
+                //Manipulacíon de errores
+                console.log(err)
+            }}
+            
+            FuncionAsyncronaExpresada();
+
+    //Callbacks
+
+    //Son funciones que se pasan a otra función como argumento 
+    //Se ejecutan después de que se haya completado alguna operación 
+    //Son simples, pero pueden generar un caos de devoluciones de llamadas 
+    //Se pueden utilizar para controlar errores y saber cuándo algo ha fallado 
+
+    //Promesas 
+    //Son objetos que representan el resultado eventual de una operación asíncrona
+    //Pueden estar en tres estados: pendente, resolvida o rejeitada
+    //Ofrecen una solución más estructurada que los callbacks
+    //Son más legibles y tienen un manejo de errores integrado
+
+    //Funciones async/await
+
+    //Simplifican el comportamiento del uso síncrono de promesas 
+    //Son similares a una combinación de generadores y promesas 
+    //Son más legibles que las devoluciones de llamadas, pero solo se admiten en entornos modernos 
+    </script>
+</body>
+</html>
