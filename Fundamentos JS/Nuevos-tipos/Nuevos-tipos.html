@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nuevo tipos de Datos en JavaScript</h1>
+    <script>
+                                                   //SETS
+    /*son estructuras de datos que almacenan valores únicos,
+    lo que los hace útiles para realizar comparaciones y comprobaciones*/    
+        //Ejemplos
+    const set = new Set([1,2,2,3, true, false, true]);
+    console.log(set);
+    //la palavra reservada "size" sirve para contar el tamaño del arreglo
+    console.log(set.size);
+
+    const set2 = new Set();
+    //la palavra reservada "add" tiene la función de adicionar un elemento o mas en un
+    set2.add(1);
+    set2.add(2);
+    set2.add(3);
+    set2.add(3);
+    set2.add(false);
+    set2.add(false);
+    set2.add(true);
+    set2.add("hola");
+    set2.add({});
+    set2.add({});
+    console.log(set2);
+    console.log(set2.size);
+
+    console.log("Recorrriendo el set");
+    //El "for" tiene la misma función que el "forEach"
+    for (item of set) {
+        console.log(item);
+    }
+    console.log("fin del recorrimiento del set");
+
+    console.log("recorriendo set2")
+    //La función "forEach" sirve para recorrer, osea, imprimir todos los elementos de un arreglo separadamente
+    set.forEach(item => console.log(item));
+    console.log("fin del recorrimento del set2");
+    </script>
+</body>
+</html>
