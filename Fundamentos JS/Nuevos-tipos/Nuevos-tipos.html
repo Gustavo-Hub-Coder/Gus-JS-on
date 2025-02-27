@@ -45,7 +45,7 @@
     console.log("fin del recorrimento del set2"); */
 
                                                 /*MAPS*/
-    let mapa =  new Map();
+    /*let mapa =  new Map();
     //La palavra reservada set tiene la funcion de declarar un llave el valor de um Map()
     mapa.set("nombre", "Gustavo");
     mapa.set("apellido", "Garcia");
@@ -63,12 +63,62 @@
     //delete sirve para borrar un elemento
     mapa.delete("apellido");
     console.log(mapa);
-
+    
     for(let [key, value] of mapa) {
         console.log(`llave: ${key}, valor: ${value}`);
-    }
+    }*/
+                                            //WeakSets & WeakMaps
+        //WeakSet                                            
+    //Forma incorrecta de declarar un WeakSet                                            
+    //const ws = new WeakSet([1,2,3,4,5,6, true, false, {}, {}, "Hola"])
+    /*const ws = new WeakSet();
 
-    const mapa2 = new Map()
+    let valor1 = {"Valor": 1};
+    let valor2 = {"Valor": 2};
+    let valor3 = {"Valor": 3};
+
+    ws.add(valor1);
+    ws.add(valor2);
+    console.log(ws)
+
+    console.log(ws.has(valor1));
+    console.log(ws.has(valor3));
+
+    ws.delete(valor2);
+    console.log(ws);
+
+    ws.add(valor2);
+    ws.add(valor3);
+    console.log(ws);
+    //ejecutar en la consola el WeakSet o ws cada 1000 milisegundos
+    setInterval(() => console.log(ws), 1000);
+
+    setTimeout(() => {
+        //nulificación de los elementos del WeakSet
+        valor1 = null,
+        valor2 = null,
+        valor3 = null
+    }, 5000);
+    */
+        //WeakMap
+    const wm = new WeakMap();
+    let llave1 = {};
+    let llave2 = {};
+    let llave3 = {};
+    //Agregando los objetos al WeakMap
+    wm.set(llave1, 1);
+    wm.set(llave2, 2);
+    console.log(wm);
+    //validaciones
+    console.log(wm.has(llave1));
+    console.log(wm.has(llave2));
+    //Obtener el valor de un objeto adentro de los elementos del WeakMap
+    console.log(wm.get(llave1));
+    console.log(wm.get(llave2));
+    console.log(wm.get(llave3));
+    //borrar un elemento dentro del WeakMap declarado
+    wm.delete(llave2);
+    console.log(wm)
     </script>
 </body>
 </html>
