@@ -12,7 +12,7 @@
     /*son estructuras de datos que almacenan valores únicos,
     lo que los hace útiles para realizar comparaciones y comprobaciones*/    
         //Ejemplos
-    const set = new Set([1,2,2,3, true, false, true]);
+    /*const set = new Set([1,2,2,3, true, false, true]);
     console.log(set);
     //la palavra reservada "size" sirve para contar el tamaño del arreglo
     console.log(set.size);
@@ -42,7 +42,33 @@
     console.log("recorriendo set2")
     //La función "forEach" sirve para recorrer, osea, imprimir todos los elementos de un arreglo separadamente
     set.forEach(item => console.log(item));
-    console.log("fin del recorrimento del set2");
+    console.log("fin del recorrimento del set2"); */
+
+                                                /*MAPS*/
+    let mapa =  new Map();
+    //La palavra reservada set tiene la funcion de declarar un llave el valor de um Map()
+    mapa.set("nombre", "Gustavo");
+    mapa.set("apellido", "Garcia");
+    mapa.set("edad", "14");
+    
+    console.log(mapa);
+    console.log(mapa.size);
+    //La palavra reservada "has" tiene la funcion de verificar si tiene un valor en un Map()
+    console.log(mapa.has("correo"));
+    console.log(mapa.has("nombre"));
+    //"get" tiene la funcion de ejecutar el valor
+    console.log(mapa.get("nombre"));
+    mapa.set("nombre", "Gustavo Alonzo");
+    console.log(mapa.get("nombre"));
+    //delete sirve para borrar un elemento
+    mapa.delete("apellido");
+    console.log(mapa);
+
+    for(let [key, value] of mapa) {
+        console.log(`llave: ${key}, valor: ${value}`);
+    }
+
+    const mapa2 = new Map()
     </script>
 </body>
 </html>
