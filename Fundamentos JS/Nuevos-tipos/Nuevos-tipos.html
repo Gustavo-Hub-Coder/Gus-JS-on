@@ -101,7 +101,7 @@
     }, 5000);
     */
         //WeakMap
-    const wm = new WeakMap();
+    /*const wm = new WeakMap();
     let llave1 = {};
     let llave2 = {};
     let llave3 = {};
@@ -119,6 +119,27 @@
     //borrar un elemento dentro del WeakMap declarado
     wm.delete(llave2);
     console.log(wm)
+    */
+
+                                                //Iterables & iterators
+    const iterable = [1,2,4,5]
+    //Accedemos al iterador del iterable
+    const iterador = iterable[Symbol.iterator]();
+    console.log(iterable);
+    console.log(iterador); 
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+    //console.log(iterador.next());
+
+    let next = iterador.next();
+
+    while (!next.done) {
+        console.log(next.value);
+        next = iterador.next();
+    }
     </script>
 </body>
 </html>
