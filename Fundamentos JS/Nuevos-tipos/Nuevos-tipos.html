@@ -249,7 +249,43 @@
     obj.imprimir()
     */
                                 //Call, Apply y bind (llamar, aplicar y vincular)
+    console.log(this);
+    this.lugar = "Contexto Global";
 
+    function saludar(saludo, aQuien) {
+        console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+    }
+
+    saludar("Hola", "Gustavo");
+
+    const obj = {
+        lugar: "Contexto Objeto"
+    }
+    //Call(), Aplly() y Bind() pasan los metodos y valores de un objeto a otro objeto. 
+    //Con la propiedad Call() nos permite llamar un método de un objeto en otro objeto
+    saludar.call(obj, "hola", "Gustavo");
+    saludar.call(null, "hola", "Gustavo");
+    saludar.call(this, "hola", "Gustavo");
+    //Con la propiedad Aplly() no permite tomar los argumentos como un array
+    saludar.apply(obj, ["Hola", "Gustavo"]);
+    saludar.apply(null, ["Hola", "Gustavo"]);
+    saludar.apply(this, ["Hola", "Gustavo"]);
+
+    const persona = {
+        nombre: "Gustavo",
+        saludar: function() {
+            console.log(`Hola ${this.nombre}`)
+        }
+    }
+
+    persona.saludar();
+
+    const otraPersona = {
+        /*El bind nos permite vincular el contexto (contexto local en este caso) y el objeto que es el
+        objeto persona usando el "bind(persona)", para que lo vincule con este objeto llamado otraPersona con el contexto local                                             */ 
+        saludar: persona.saludar.bind(persona)
+    }
+    otraPersona.saludar();
     </script>
 </body>
 </html>
