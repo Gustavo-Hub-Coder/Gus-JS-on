@@ -142,6 +142,7 @@
     }
     */
                                                 //Generators
+    /*
     function* iterable(){
         yield "hola";
         console.log("Hola consola");
@@ -169,6 +170,86 @@
             console.log({valor, resultado: valor * valor})
         }, Math.random() * 1000);
     }
+    */    
+                                        //Proxies en JavaScript
+    /*const persona = {
+        nombre: "",
+        edad: ""
+    }
+    
+    const manejador = {
+        set(obj, prop, valor) {
+            obj[prop] = valor;
+        }
+    }
+
+    const Gustavo = new Proxy(persona, manejador);
+
+    Gustavo.nombre = "Gustavo";
+    Gustavo.edad = 14
+    Gustavo.Instagram = "Al.o.n.z.o"
+    console.log(Gustavo);
+    */
+
+                                    //Propiedades Dinámicas de los objetos
+    /*let aleatorio = Math.round(Math.random() * 100 + 5);
+    //Declarando el objecto
+    const objUsuarios = {
+    //Apartir del nuevo estandar nos permite crear directamente dentro del objeto crear las propiedades dinamicas
+    //para una propiedad que se pueda definir de una manera dinamica es la sintaxis de los corchetes
+    propiedad: "valor",
+    [`id_${aleatorio}`]: "Valor Aleatorio"
+    };
+    //ejecutando el objeto antes del forEach
+    console.log(objUsuarios);
+    const usuarios = ["Gustavo", "Kala", "Miguel", "Jon"];
+    //ForEach para que todos lo elementos del objeto usuario tengan su index al lado
+    usuarios.forEach((usuarios, index) => objUsuarios[`id_${index}`] = usuarios);
+    //ejecutando el objeto despues del forEach con los index y los elementos  
+    console.log(objUsuarios);
+    */
+                                                //This
+    /*                                                
+    console.log(this);
+    console.log(window);
+    console.log(this === window);
+
+    this.nombre = "contexto global";
+    console.log(this.nombre)
+
+    function imprimir() {
+        console.log(this.nombre)
+    }
+
+    imprimir();
+
+    const obj = {
+        nombre: "contexto Objeto",
+        imprimir: function () {
+            console.log(this.nombre);
+        }
+    }
+
+    obj.imprimir();
+
+    const obj2 = {
+        nombre: "contexto objeto 2",
+        imprimir
+    }
+
+    obj2.imprimir()
+
+    const obj3 = {
+        nombre: "contexto Objeto 3",
+        imprimir: ()  => {
+            console.log(this.nombre);
+        }
+    }
+
+    obj.imprimir()
+    */
+                                //Call, Apply y bind (llamar, aplicar y vincular)
+
     </script>
 </body>
 </html>
