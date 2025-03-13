@@ -249,6 +249,7 @@
     obj.imprimir()
     */
                                 //Call, Apply y bind (llamar, aplicar y vincular)
+    /*
     console.log(this);
     this.lugar = "Contexto Global";
 
@@ -282,10 +283,25 @@
 
     const otraPersona = {
         /*El bind nos permite vincular el contexto (contexto local en este caso) y el objeto que es el
-        objeto persona usando el "bind(persona)", para que lo vincule con este objeto llamado otraPersona con el contexto local                                             */ 
-        saludar: persona.saludar.bind(persona)
+        objeto persona usando el "bind(persona)", para que lo vincule con este objeto llamado otraPersona con el contexto local                                          */ 
+        //saludar: persona.saludar.bind(persona)
+    //}
+    //otraPersona.saludar(); 
+
+                                                //JSON
+    const json = {
+        cadena: "Jon",
+        numero: 14,
+        booleano: false,
+        arreglo: ["Correr", "Salir", "Programar"],
+        objeto: {
+            instagram: "Al.o.n.z.o",
+            gmail: "garciapino.gus@gmail.com"
+        },
+        nulo: null
     }
-    otraPersona.saludar();
+
+    console.log(json)
     </script>
 </body>
 </html>

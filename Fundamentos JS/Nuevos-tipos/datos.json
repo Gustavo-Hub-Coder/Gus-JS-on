@@ -1,0 +1,11 @@
+{
+    "cadena": "Jon",
+    "numero": 14,
+    "booleano": false,
+    "arreglo": ["Correr", "Salir", "Programar"],
+    "objeto": {
+        "instagram": "Al.o.n.z.o",
+        "gmail": "garciapino.gus@gmail.com"
+    },
+    "nulo": null
+}
