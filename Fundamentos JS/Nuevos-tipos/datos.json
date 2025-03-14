@@ -1,7 +1,7 @@
 {
     "cadena": "Jon",
-    "numero": 14,
-    "booleano": false,
+    "numero": "14",
+    "booleano": "false",
     "arreglo": ["Correr", "Salir", "Programar"],
     "objeto": {
         "instagram": "Al.o.n.z.o",
