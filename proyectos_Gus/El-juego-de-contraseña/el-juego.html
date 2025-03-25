@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          display: flex;
+          flex-direction: column; /* elementos uno debajo del otro */
+          justify-content: center; /* centra verticalmente */
+          align-items: center;     /* centra horizontalmente */
+          height: 100vh;           /* altura total de la pantalla */
+          margin: 0;
+        }
+    
+        input {
+          padding: 10px;
+          font-size: 16px;
+          border: 2px solid #444;
+          border-radius: 8px;
+          margin-bottom: 20px; /* espacio entre input y la lista */
+        }
+    
+        h3 {
+          margin: 0 0 10px 0;
+        }
+    
+        .escudo1 {
+          border: 2px solid #000000;
+          border-radius: 12px;
+          padding: 5px;
+          background-color: #ffffff;
+          width: 250px;
+          height: 25px;
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+          margin-bottom: 10px;
+          text-align: center;
+        }
+        .escudo2 {
+          border: 2px solid #000000;
+          border-radius: 12px;
+          padding: 5px;
+          background-color: #ffffff;
+          width: 250px;
+          height: 25px;
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+          margin-bottom: 10px;
+          text-align: center;
+        }
+    
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+    </style>  
+</head>
+<body>
+
+    <input type="text" id="EntradaContraseña">
+    <h3>La contraseña debe tener:</h3>
+    
+    <div>
+        <ul>
+            <li class="escudo1">Menos de 10 caracteres</li>
+            <li class="escudo2">Un simbolo</li>
+        </ul>
+    </div>
+    <script src="eljuego-script.js"></script>
+</body>
+</html>

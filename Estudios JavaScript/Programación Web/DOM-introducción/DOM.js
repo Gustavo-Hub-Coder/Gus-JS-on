@@ -27,6 +27,8 @@ setTimeout(() => {
 }, 3000);
 document.write("<h2>Hola mundo desde el DOM<h2>")
 */
+/*
+    métodos que permiten seleccionar elementos de un documento HTML
 
 console.log(document.getElementsByTagName("li"));
 console.log(document.getElementsByClassName("card"));
@@ -38,3 +40,37 @@ console.log(document.querySelectorAll("a").length);
 document.querySelectorAll("a").forEach((el) => console.log(el));
 console.log(document.querySelectorAll(".card"));
 console.log(document.querySelectorAll(".card")[1]);
+*/
+//Atributos y DATA-attributes
+
+console.log(document.documentElement.lang);
+console.log(document.documentElement.getAttribute("lang"));
+console.log(document.querySelector(".link-WebAPIs").href);
+console.log(document.querySelector(".link-WebAPIs").getAttribute("href"));
+//Modificacion de atributos de el documento com DOM desde JS
+document.documentElement.lang = "en";
+console.log(document.documentElement.lang);
+document.documentElement.setAttribute("lang", "es-MX");
+
+const $linkDOM = document.querySelector(".link-WebAPIs");
+
+$linkDOM.setAttribute("target", "_blank");
+$linkDOM.setAttribute("rel", "noopen");
+$linkDOM.setAttribute("href", "https://www.instagram.com/gusta_a067/");
+console.log($linkDOM.hasAttribute("rel"));
+$linkDOM.removeAttribute("rel");
+console.log($linkDOM.hasAttribute("rel"));
+
+//DATA_ATTRIBUTES
+
+console.log($linkDOM.getAttribute("data-description"))
+console.log($linkDOM.dataset);
+console.log($linkDOM.dataset.description);
+$linkDOM.setAttribute("data-description", "Modelo de objeto del documento");
+console.log($linkDOM.dataset.description);
+$linkDOM.dataset.description = "Sigueme em mi instagram"
+console.log($linkDOM.dataset.description);
+console.log($linkDOM.hasAttribute("data-id"));
+console.log($linkDOM.removeAttribute("data-id"));
+console.log($linkDOM.hasAttribute("data-id"))
+
