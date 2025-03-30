@@ -90,3 +90,32 @@ $linkDOM.style.marginLeft = "auto";
 $linkDOM.style.marginRight = "auto";
 $linkDOM.style.padding = "1rem";
 $linkDOM.style.borderRadius = ".5rem";
+
+//variables CSS en JavaScript con el DOM
+
+const $html = document.documentElement,
+$body = document.body;
+//El método getComputedStyle() obtiene las propiedades y los valores CSS
+let varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
+let varYellowColor = getComputedStyle($html).getPropertyValue("--yellow-color");
+
+console.log(varDarkColor, varYellowColor);
+
+$body.style.backgroundColor = varDarkColor;
+$body.style.color = varYellowColor;
+//Modificación de variables css en javascript
+$html.style.setProperty("--dark-color", "pink");
+varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
+//el método setProperty() "resetea" la propiedad seleccionada
+$body.style.setProperty("background-color", varDarkColor);
+
+//practica
+
+let varBlueColor = getComputedStyle($html).getPropertyValue("--blue-color");
+//verificacion para ver si declaración funcionó
+$body.style.backgroundColor = varBlueColor;
+$html.style.setProperty("--blue-color" , "red");
+varBlueColor = getComputedStyle($html).getPropertyValue("--blue-color");
+$body.style.setProperty("background-color", varBlueColor);
+
+
