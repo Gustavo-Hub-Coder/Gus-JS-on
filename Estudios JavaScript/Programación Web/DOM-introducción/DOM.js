@@ -41,7 +41,7 @@ document.querySelectorAll("a").forEach((el) => console.log(el));
 console.log(document.querySelectorAll(".card"));
 console.log(document.querySelectorAll(".card")[1]);
 */
-//Atributos y DATA-attributes
+    //Atributos y DATA-attributes
 /*
 console.log(document.documentElement.lang);
 console.log(document.documentElement.getAttribute("lang"));
@@ -61,7 +61,7 @@ console.log($linkDOM.hasAttribute("rel"));
 $linkDOM.removeAttribute("rel");
 console.log($linkDOM.hasAttribute("rel"));
 
-//DATA_ATTRIBUTES
+    //DATA_ATTRIBUTES
 
 console.log($linkDOM.getAttribute("data-description"))
 console.log($linkDOM.dataset);
@@ -74,6 +74,7 @@ console.log($linkDOM.hasAttribute("data-id"));
 console.log($linkDOM.removeAttribute("data-id"));
 console.log($linkDOM.hasAttribute("data-id"))
 */
+/*
 const $linkDOM = document.querySelector(".link-WebAPIs");
 console.log($linkDOM.style);
 //con el comando getAttribute también se puede ejecutar el atributo style 
@@ -90,9 +91,9 @@ $linkDOM.style.marginLeft = "auto";
 $linkDOM.style.marginRight = "auto";
 $linkDOM.style.padding = "1rem";
 $linkDOM.style.borderRadius = ".5rem";
-
-//variables CSS en JavaScript con el DOM
-
+*/
+    //variables CSS en JavaScript con el DOM
+/*
 const $html = document.documentElement,
 $body = document.body;
 //El método getComputedStyle() obtiene las propiedades y los valores CSS
@@ -109,13 +110,49 @@ varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
 //el método setProperty() "resetea" la propiedad seleccionada
 $body.style.setProperty("background-color", varDarkColor);
 
-//practica
-
+    //practica
+/*
 let varBlueColor = getComputedStyle($html).getPropertyValue("--blue-color");
 //verificacion para ver si declaración funcionó
 $body.style.backgroundColor = varBlueColor;
 $html.style.setProperty("--blue-color" , "red");
 varBlueColor = getComputedStyle($html).getPropertyValue("--blue-color");
 $body.style.setProperty("background-color", varBlueColor);
+*/
+    //CLASES CSS
+/*    
+const $card = document.querySelector(".card");
+console.log("EJECUTAR EL VALOR DE LA CLASE EN LA CONSOLA")
+console.log($card);
+//Obtener el valor de el atributo class usando className
+console.log($card.className);
+//el método classList tiene la misma función que className, solo que ejecuta el valor(es) en una lista
+console.log($card.classList);
+console.log($card.classList.contains("rotate-45"));
+//adicionar una clase con add()
+console.log("ADICIONANDO CLASE")
+$card.classList.add("rotate-45");
+console.log($card.classList.contains("rotate-45"));
+console.log($card.classList);
+console.log($card.className);
+//remover una clase remove()
+console.log("REMOVIENDO CLASE")
+$card.classList.remove("rotate-45");
+console.log($card.classList.contains("rotate-45"));
+console.log($card.classList);
+console.log($card.className);
+//El método toggle permite alternar entre dos estados, como remover o adicionar un elemento, o ocultar y mostrar una clase de un elemento
+//Antes estaba sin la clase rotate ahora esta en la lista de clases por el comando toggle
+$card.classList.toggle("rotate-45");
+console.log($card.classList.contains("rotate-45"));
+//Ahora lo removió porque antes estaba en la lista, osea "bajamos la palanca (toggle)"
+$card.classList.toggle("rotate-45");
+console.log($card.classList.contains("rotate-45"));
+$card.classList.toggle("rotate-45");
+$card.classList.replace("rotate-45", "rotate-135");
+$card.classList.add("opacity-80", "sepia");
+$card.classList.remove("opacity-80", "sepia");
+$card.classList.toggle("opacity-80", "sepia", "rotate-135");
+*/
 
 
