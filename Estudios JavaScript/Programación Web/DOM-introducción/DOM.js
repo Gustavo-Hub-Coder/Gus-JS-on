@@ -122,6 +122,7 @@ $body.style.setProperty("background-color", varBlueColor);
     //CLASES CSS
 /*    
 const $card = document.querySelector(".card");
+
 console.log("EJECUTAR EL VALOR DE LA CLASE EN LA CONSOLA")
 console.log($card);
 //Obtener el valor de el atributo class usando className
@@ -130,29 +131,60 @@ console.log($card.className);
 console.log($card.classList);
 console.log($card.classList.contains("rotate-45"));
 //adicionar una clase con add()
+
 console.log("ADICIONANDO CLASE")
+
 $card.classList.add("rotate-45");
 console.log($card.classList.contains("rotate-45"));
 console.log($card.classList);
 console.log($card.className);
 //remover una clase remove()
+
 console.log("REMOVIENDO CLASE")
+
 $card.classList.remove("rotate-45");
+
 console.log($card.classList.contains("rotate-45"));
 console.log($card.classList);
 console.log($card.className);
+
 //El método toggle permite alternar entre dos estados, como remover o adicionar un elemento, o ocultar y mostrar una clase de un elemento
 //Antes estaba sin la clase rotate ahora esta en la lista de clases por el comando toggle
 $card.classList.toggle("rotate-45");
+
 console.log($card.classList.contains("rotate-45"));
+
 //Ahora lo removió porque antes estaba en la lista, osea "bajamos la palanca (toggle)"
 $card.classList.toggle("rotate-45");
 console.log($card.classList.contains("rotate-45"));
+
 $card.classList.toggle("rotate-45");
 $card.classList.replace("rotate-45", "rotate-135");
 $card.classList.add("opacity-80", "sepia");
 $card.classList.remove("opacity-80", "sepia");
 $card.classList.toggle("opacity-80", "sepia", "rotate-135");
 */
+    //DOM: texto y HTML
+/*    
+const $whatlsDOM = document.getElementById("que-es");
 
-
+let text = `
+    <p>
+    El Modelo de Objetos del Documento (<b><i>DOM - Document Object Model </i></b>) es un                    
+API para documentos HTML y XML.
+    </p>
+    <p>
+    Éste provée una representación estructural del documento, permitiendo modificar su contenido y presentación visual mediante código JS.
+    </p>
+    <p>
+        <mark> El DOM no es parte de la especificación de JavaScript, es una API para los navegadores.</mark>
+    </p>
+`;
+//mala practica
+//$whatlsDOM.innerText = text;
+$whatlsDOM.textContent = text;
+$whatlsDOM.innerHTML = text;
+$whatlsDOM.outerHTML = text;
+*/
+    //DOM traversing: Recorriendo el DOM
+    
