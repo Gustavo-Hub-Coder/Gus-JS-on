@@ -187,4 +187,57 @@ $whatlsDOM.innerHTML = text;
 $whatlsDOM.outerHTML = text;
 */
     //DOM traversing: Recorriendo el DOM
-    
+/*    
+const $cards = document.querySelector(".card");
+
+console.log($cards.children);
+console.log($cards.children[2]);
+console.log($cards.parentElement);
+console.log($cards.firstElementChild);
+console.log($cards.lastElementChild);
+console.log($cards.lastChild);
+console.log($cards.lastElementChild);
+console.log($cards.closest());
+*/
+
+const $figure = document.createElement("figure"),
+ $img = document.createElement("img"),
+ $figcaption = document.createElement("figcaption"),
+ $figcaptionText = document.createTextNode("animals"),
+ $cards = document.querySelector(".cards");
+ $figure2 = document.createElement("figure");
+//el método setAttribute Permite añadir, modificar o actualizar atributos y sus valores en un elemento HTML
+$img.setAttribute("src", "https://picsum.photos/id/16/200");
+$img.setAttribute("alt", "Animals");
+$figure.classList.add("card");
+
+$figcaption.appendChild($figcaptionText);
+$figure.appendChild($img);
+$figure.appendChild($figcaption);
+
+$figure2.innerHTML = `
+<img src="https://picsum.photos/id/590/200" alt="People">
+<figcaption>People</figcaption>
+`
+$figure2.classList.add("card");
+$cards.appendChild($figure2);
+
+const estaciones = ["Primavera", "Verano", "Otoño", "Invierno"],
+ $ul = document.createElement("ul");
+
+ document.write("<h3>Estaciones del Año<h3>");
+ document.body.appendChild($ul)
+
+ estaciones.forEach(el => {
+    const $li = document.createElement("li");
+    $li.textContent = el;
+    $ul.appendChild($li)
+ });
+
+ const continentes = ["América", "Asia", "Africa", "Europa", "Oceanía"],
+ $ul2 = document.createElement("ul");
+
+ document.write("<h3>Continentes del mundo<h3>");
+ document.body.appendChild($ul2)
+ ul2 = innerHTML = "";
+ continentes.forEach((el) => ($ul2.innerHTML += `<li>${el}</li>`))
