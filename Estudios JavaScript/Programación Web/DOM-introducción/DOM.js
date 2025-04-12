@@ -199,7 +199,7 @@ console.log($cards.lastChild);
 console.log($cards.lastElementChild);
 console.log($cards.closest());
 */
-
+/* Creando elementos
 const $figure = document.createElement("figure"),
  $img = document.createElement("img"),
  $figcaption = document.createElement("figcaption"),
@@ -241,3 +241,32 @@ const estaciones = ["Primavera", "Verano", "Otoño", "Invierno"],
  document.body.appendChild($ul2)
  ul2 = innerHTML = "";
  continentes.forEach((el) => ($ul2.innerHTML += `<li>${el}</li>`))
+*/
+//MANEJADORES DE EVENTOS 
+//función manejadora de eventos
+function holaMundo() {
+    alert("hola mundo");
+    console.log(event)
+}
+//para declarar un manejador de eventos semantico se declara en el JS
+const $eventosemantico = document.getElementById("eventosemantico"),
+    $eventoMultiple = document.getElementById("eventoMultiple")
+
+$eventosemantico.onclick = holaMundo;
+$eventosemantico.onclick = function (e) {
+    alert("Hola Mundo Manejador de eventos Semantico")
+    console.log(e);
+    console.log(event);
+}
+//para declarar un manejador de eventos multiples se usa la palavra resservada addEventListener()
+$eventoMultiple.addEventListener("click", holaMundo);
+//manera de arrow function
+$eventoMultiple.addEventListener("click", (e) => {
+    alert("hola mundo manejador de evenetos multiple")
+    console.log(e);
+    //tipo de evento
+    console.log(e.type);
+    //evento que lo origina
+    console.log(e.target);
+    console.log(event);
+});
