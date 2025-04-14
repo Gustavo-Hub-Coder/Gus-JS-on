@@ -248,9 +248,15 @@ function holaMundo() {
     alert("hola mundo");
     console.log(event)
 }
+//toda función que pueda ser manejadora de evento no puede tener parametros que no sea event
+function saludar(nombre = "Desconocid@") {
+    alert(`Hola ${nombre}`);
+    console.log(event);
+}
 //para declarar un manejador de eventos semantico se declara en el JS
 const $eventosemantico = document.getElementById("eventosemantico"),
-    $eventoMultiple = document.getElementById("eventoMultiple")
+    $eventoMultiple = document.getElementById("eventoMultiple"),
+    $eventoRemover = document.getElementById("evento-remover")
 
 $eventosemantico.onclick = holaMundo;
 $eventosemantico.onclick = function (e) {
@@ -262,7 +268,7 @@ $eventosemantico.onclick = function (e) {
 $eventoMultiple.addEventListener("click", holaMundo);
 //manera de arrow function
 $eventoMultiple.addEventListener("click", (e) => {
-    alert("hola mundo manejador de evenetos multiple")
+    alert("hola mundo manejador de eventos multiple")
     console.log(e);
     //tipo de evento
     console.log(e.type);
@@ -270,3 +276,17 @@ $eventoMultiple.addEventListener("click", (e) => {
     console.log(e.target);
     console.log(event);
 });
+//La función que no es manejadora de eventos dentro de una funcion anonima tiene que tener ()
+$eventoMultiple.addEventListener("click", () => {
+    saludar();
+    saludar("Gustavo")
+});
+
+const removerDobleClick = (e) => {
+    alert(`Removiendo el evento de tipo ${e.type}`);
+    console.log(e);
+    $eventoRemover.removeEventListener("dblclick",removerDobleClick)
+    $eventoRemover.disabled = true;
+}
+
+$eventoRemover.addEventListener("dblclick",removerDobleClick)
