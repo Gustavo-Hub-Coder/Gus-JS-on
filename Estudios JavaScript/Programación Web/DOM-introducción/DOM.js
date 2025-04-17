@@ -242,8 +242,9 @@ const estaciones = ["Primavera", "Verano", "Otoño", "Invierno"],
  ul2 = innerHTML = "";
  continentes.forEach((el) => ($ul2.innerHTML += `<li>${el}</li>`))
 */
-//MANEJADORES DE EVENTOS 
+//MANEJADORES DE EVENTOS Y EVENTOS CON PARAMETROS Y REMOVER EVENTOS
 //función manejadora de eventos
+/*
 function holaMundo() {
     alert("hola mundo");
     console.log(event)
@@ -290,3 +291,21 @@ const removerDobleClick = (e) => {
 }
 
 $eventoRemover.addEventListener("dblclick",removerDobleClick)
+*/
+//Flujo de Eventos (Burbuja y captura)
+
+const $divsEventos = document.querySelectorAll(".eventos-flujo div")
+
+function flujoEventos(e) {
+    console.log(`Hola te saluda ${e.currentTarget.className}, el click lo originó ${e.target.className}`);
+}
+
+console.log($divsEventos);
+
+$divsEventos.forEach(div => {
+    //fase de burbuja
+    //div.addEventListener("click", flujoEventos);
+    //div.addEventListener("click", flujoEventos, false);
+    //fase de captura
+    div.addEventListener("click", flujoEventos, true);
+});

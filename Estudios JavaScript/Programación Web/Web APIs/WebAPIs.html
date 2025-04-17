@@ -30,6 +30,20 @@
         .sepia {
             filter: sepia(1);
         }
+        .eventos-flujo div {
+            padding: 4rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .uno{
+            background-color: yellow;
+        }
+        .dos{
+            background-color: gold;
+        }
+        .tres{
+            background-color: lightyellow;
+        }
     </style>
 </head>
 <body>
@@ -99,6 +113,19 @@
         <button id="eventoMultiple">Evento con menejador multiple</button>
         <br><br>
         <button id="evento-remover">Removiendo eventos con manejadores múltiples</button>
+        <br><br>
+        <h3>Flujo de eventos</h3>
+        <section class="eventos-flujo">
+            <div class="uno">
+                1
+                <div class="dos">
+                    2
+                    <div class="tres">
+                        3
+                    </div>
+                </div>
+            </div>
+        </section>
         <br><br><br>
         <script src="../DOM-introducción/DOM.js"></script>
     </ul>
