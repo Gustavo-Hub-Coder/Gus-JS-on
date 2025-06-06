@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+        --yellow-color: #F7DF1E;
+        --dark-color: #222;
+        --blue-color: #0a2ea5;
+        }
+        .card {
+            display: inline-block;
+            background-color: var(--dark-color);
+            color: var(--yellow-color);
+        }
+        .card figcaption {
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista:</h1> 
+
+    <div class="container"> 
+        <button id="btnAgregar">Agregar imagen</button>
+    </div>
+
+    <hr>
+    <section class="cards">
+        <figure class="card">
+            <img src="https://picsum.photos/id/1/300" alt="tech">
+            <figcaption>Tech</figcaption>
+            <div class="btnCard">
+                <button class="btnEliminar">Eliminar imagen</button>
+            </div>
+
+        </figure>
+        <figure class="card">
+            <img src="https://picsum.photos/id/237/300" alt="animals">
+            <figcaption>Animals</figcaption>
+            <div class="btnCard">
+                <button class="btnEliminar">Eliminar imagen</button>
+            </div>
+        </figure>
+
+        <figure class="card">
+            <img src="https://picsum.photos/id/16/300" alt="nature">
+            <figcaption>Nature</figcaption>
+            <div class="btnCard">
+                <button class="btnEliminar">Eliminar imagen</button>
+            </div>
+        </figure>
+    </section>
+    <script src="lista.js"></script>
+</body>
+</html>

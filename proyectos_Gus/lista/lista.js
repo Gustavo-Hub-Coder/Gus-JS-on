@@ -1,0 +1,1 @@
+const btnAgregar =  document.getElementById("btnAgregar")

@@ -7,8 +7,8 @@ const hablar = (texto) => speechSynthesis.
 speak(new SpeechSynthesisUtterance(texto));
 
 hablar(texto);
-*/
-/*console.log("*********** Elementos del Documento **************");
+
+console.log("*********** Elementos del Documento **************");
 //console.log(window.document);
 console.log(document);
 console.log(document.head);
@@ -26,9 +26,12 @@ setTimeout(() => {
     console.log(document.getSelection().toString());
 }, 3000);
 document.write("<h2>Hola mundo desde el DOM<h2>")
-*/
-/*
-    métodos que permiten seleccionar elementos de un documento HTML
+
+
+
+
+
+    //métodos que permiten seleccionar elementos de un documento HTML
 
 console.log(document.getElementsByTagName("li"));
 console.log(document.getElementsByClassName("card"));
@@ -40,9 +43,12 @@ console.log(document.querySelectorAll("a").length);
 document.querySelectorAll("a").forEach((el) => console.log(el));
 console.log(document.querySelectorAll(".card"));
 console.log(document.querySelectorAll(".card")[1]);
-*/
+
+
+
+
     //Atributos y DATA-attributes
-/*
+
 console.log(document.documentElement.lang);
 console.log(document.documentElement.getAttribute("lang"));
 console.log(document.querySelector(".link-WebAPIs").href);
@@ -61,6 +67,9 @@ console.log($linkDOM.hasAttribute("rel"));
 $linkDOM.removeAttribute("rel");
 console.log($linkDOM.hasAttribute("rel"));
 
+
+
+
     //DATA_ATTRIBUTES
 
 console.log($linkDOM.getAttribute("data-description"))
@@ -73,8 +82,8 @@ console.log($linkDOM.dataset.description);
 console.log($linkDOM.hasAttribute("data-id"));
 console.log($linkDOM.removeAttribute("data-id"));
 console.log($linkDOM.hasAttribute("data-id"))
-*/
-/*
+
+
 const $linkDOM = document.querySelector(".link-WebAPIs");
 console.log($linkDOM.style);
 //con el comando getAttribute también se puede ejecutar el atributo style 
@@ -91,9 +100,14 @@ $linkDOM.style.marginLeft = "auto";
 $linkDOM.style.marginRight = "auto";
 $linkDOM.style.padding = "1rem";
 $linkDOM.style.borderRadius = ".5rem";
-*/
+
+
+
+
+
+
     //variables CSS en JavaScript con el DOM
-/*
+
 const $html = document.documentElement,
 $body = document.body;
 //El método getComputedStyle() obtiene las propiedades y los valores CSS
@@ -110,17 +124,23 @@ varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
 //el método setProperty() "resetea" la propiedad seleccionada
 $body.style.setProperty("background-color", varDarkColor);
 
+
     //practica
-/*
+
 let varBlueColor = getComputedStyle($html).getPropertyValue("--blue-color");
 //verificacion para ver si declaración funcionó
 $body.style.backgroundColor = varBlueColor;
 $html.style.setProperty("--blue-color" , "red");
 varBlueColor = getComputedStyle($html).getPropertyValue("--blue-color");
 $body.style.setProperty("background-color", varBlueColor);
-*/
+
+
+
+
+
+
     //CLASES CSS
-/*    
+   
 const $card = document.querySelector(".card");
 
 console.log("EJECUTAR EL VALOR DE LA CLASE EN LA CONSOLA")
@@ -163,9 +183,9 @@ $card.classList.replace("rotate-45", "rotate-135");
 $card.classList.add("opacity-80", "sepia");
 $card.classList.remove("opacity-80", "sepia");
 $card.classList.toggle("opacity-80", "sepia", "rotate-135");
-*/
+
     //DOM: texto y HTML
-/*    
+   
 const $whatlsDOM = document.getElementById("que-es");
 
 let text = `
@@ -185,9 +205,13 @@ API para documentos HTML y XML.
 $whatlsDOM.textContent = text;
 $whatlsDOM.innerHTML = text;
 $whatlsDOM.outerHTML = text;
-*/
+
+
+
+
+
     //DOM traversing: Recorriendo el DOM
-/*    
+    
 const $cards = document.querySelector(".card");
 
 console.log($cards.children);
@@ -198,8 +222,12 @@ console.log($cards.lastElementChild);
 console.log($cards.lastChild);
 console.log($cards.lastElementChild);
 console.log($cards.closest());
-*/
-/* Creando elementos
+
+
+
+
+
+// Creando elementos
 const $figure = document.createElement("figure"),
  $img = document.createElement("img"),
  $figcaption = document.createElement("figcaption"),
@@ -241,10 +269,13 @@ const estaciones = ["Primavera", "Verano", "Otoño", "Invierno"],
  document.body.appendChild($ul2)
  ul2 = innerHTML = "";
  continentes.forEach((el) => ($ul2.innerHTML += `<li>${el}</li>`))
-*/
+
+
+
+
 //MANEJADORES DE EVENTOS Y EVENTOS CON PARAMETROS Y REMOVER EVENTOS
 //función manejadora de eventos
-/*
+
 function holaMundo() {
     alert("hola mundo");
     console.log(event)
@@ -291,21 +322,119 @@ const removerDobleClick = (e) => {
 }
 
 $eventoRemover.addEventListener("dblclick",removerDobleClick)
-*/
-//Flujo de Eventos (Burbuja y captura)
 
-const $divsEventos = document.querySelectorAll(".eventos-flujo div")
+
+
+
+
+    //Flujo de Eventos (Burbuja y captura)
+
+const $divsEventos = document.querySelectorAll(".eventos-flujo div"),
+    $linkEventos = document.querySelector(".eventos-flujo a");
 
 function flujoEventos(e) {
-    console.log(`Hola te saluda ${e.currentTarget.className}, el click lo originó ${e.target.className}`);
+    console.log(`Hola te saluda ${this}, el click lo originó ${e.target.className}`);
 }
 
-console.log($divsEventos);
+//Delegación de eventos  
+document.addEventListener("click", (e) => {
+    console.log("Click en ", e.target)
 
-$divsEventos.forEach(div => {
-    //fase de burbuja
-    //div.addEventListener("click", flujoEventos);
-    //div.addEventListener("click", flujoEventos, false);
-    //fase de captura
-    div.addEventListener("click", flujoEventos, true);
+    if(e.target.matches(".eventos-flujo div")){
+        flujoEventos(e);
+    }
+
+    if(e.target.matches(".eventos-flujo a")) {
+        alert("hola, soy Gustavo");
+        e.preventDefault();
+    }
+})
+
+
+
+    //BOM propiedades de la ventana y eventos
+window.addEventListener("resize", (e) => {
+    console.clear()
+    console.log("*****Evento Resize*****")
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+    console.log(window.outerWidth);
+    console.log(window.outerHeight);
 });
+
+window.addEventListener("scroll", (e) =>{
+    console.clear();
+    console.log("*****Evento Scroll*****");
+    console.log(window.scrollX);
+    console.log(window.scrollY);
+    console.log(e);
+});
+
+window.addEventListener("load", (e) =>{
+    console.log("*****Evento Load*****");
+    console.log(window.screenX);
+    console.log(window.screenY);
+    console.log(e);
+})
+
+document.addEventListener("DOMContentLoaded", e =>{
+    console.log("*****Evento DOMContentLoaded*****");
+    console.log(window.screenX);
+    console.log(window.screenY);
+    console.log(e);
+})
+
+//window.alert("Alerta");
+//window.confirm("Confirmación");
+//window.prompt("Aviso");
+             //BOM MÉTODOS
+const $btnAbrir = document.querySelector("#abrir-ventana"),
+    $btnCerrar = document.querySelector("#cerrar-ventana"),
+    $btnImprimir = document.querySelector("#imprimir-ventana");
+
+let ventana;
+
+$btnAbrir.addEventListener("click", e => {
+    ventana = window.open("https://www.instagram.com/gusta_a067/");
+}); 
+
+$btnCerrar.addEventListener("click", e => {
+    //window.close()
+    ventana.close();
+});
+
+$btnImprimir.addEventListener("click", e => {
+    window.print();
+});   
+
+//          BOM OBJETOS: URL, HISTORIAL Y NAVEGADOR
+
+console.log("******OBJETO URL (location)*******");
+console.log(location);
+console.log(location.origin);
+console.log(location.protocol);
+console.log(location.host);
+console.log(location.hostname);
+console.log(location.port);
+console.log(location.href);
+console.log(location.hash);
+console.log(location.pathname);
+
+
+
+console.log("***********OBJETO HISTORIAL (history)");
+console.log(history);
+console.log(history.length);
+
+console.log("********Objeto Navegador (navigator)**********");
+console.log(navigator);
+console.log(navigator.connection);
+console.log(navigator.geolocation);
+console.log(navigator.mediaDevices);
+console.log(navigator.mimeTypes);
+console.log(navigator.onLine);
+console.log(navigator.serviceWorker);
+console.log(navigator.storage);
+console.log(navigator.usb);
+console.log(navigator.userAgent);
+*/
