@@ -7,5 +7,3 @@ export default function hamburguerMenu(panelBtn, panel) {
         }
     });
 }
-
-hamburguerMenu(".panel-btn", ".panel");
